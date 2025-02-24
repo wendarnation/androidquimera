@@ -6,7 +6,7 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-9        android:targetSdkVersion="34" />
+9        android:targetSdkVersion="35" />
 10
 11    <permission
 11-->[androidx.core:core:1.13.0] C:\Users\usuario\.gradle\caches\transforms-4\42dfdf811721b94244c28f65a2afec29\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
@@ -68,8 +68,8 @@
 41-->C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:26:13-37
 42        <activity
 42-->C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:27:9-35:20
-43            android:name="com.ejemplo.android.quimera_android.MainActivity"
-43-->C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:28:13-41
+43            android:name="com.ejemplo.android.quimera_android.LoaderActivity"
+43-->C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:28:13-43
 44            android:exported="true" >
 44-->C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:29:13-36
 45            <intent-filter>

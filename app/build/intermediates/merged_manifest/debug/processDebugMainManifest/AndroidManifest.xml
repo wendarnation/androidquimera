@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="34" />
+        android:targetSdkVersion="35" />
 
     <permission
         android:name="com.ejemplo.android.quimera_android.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -40,7 +40,7 @@
             android:name="com.ejemplo.android.quimera_android.View2"
             android:exported="false" />
         <activity
-            android:name="com.ejemplo.android.quimera_android.MainActivity"
+            android:name="com.ejemplo.android.quimera_android.LoaderActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

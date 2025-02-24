@@ -120,12 +120,12 @@ ADDED from C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.
 		ADDED from C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:26:13-37
 	android:name
 		ADDED from C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:25:13-34
-activity#com.ejemplo.android.quimera_android.MainActivity
+activity#com.ejemplo.android.quimera_android.LoaderActivity
 ADDED from C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:27:9-35:20
 	android:exported
 		ADDED from C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:29:13-36
 	android:name
-		ADDED from C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:28:13-41
+		ADDED from C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:28:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\usuario\Desktop\androidquimera\app\src\main\AndroidManifest.xml:30:13-34:29
 action#android.intent.action.MAIN

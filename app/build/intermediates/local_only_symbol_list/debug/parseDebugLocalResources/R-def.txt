@@ -4,12 +4,15 @@ color black
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable isotipoblanco
+id layout
+id loadingImage
 id main
-layout activity_main
 layout activity_view2
 layout activity_view3
 layout activity_view4
 layout activity_view5
+layout loader
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
