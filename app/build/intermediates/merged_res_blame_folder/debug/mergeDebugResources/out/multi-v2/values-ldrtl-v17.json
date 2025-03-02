@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.ejemplo.android.quimera_android.app-mergeDebugResources-29:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "outputFile": "com.ejemplo.android.quimera_android.app-mergeDebugResources-31:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\usuario\\.gradle\\caches\\transforms-4\\462e02600b56a66f8051426fdb1abe8f\\transformed\\material-1.12.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\ccort\\.gradle\\caches\\transforms-4\\1456f14fdc836e70ec9cc668f53db485\\transformed\\material-1.12.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF191717</color>
+    <color name="gray">#FFB5B4B4</color>
+    <color name="lightgray">#EDEDED</color>
     <color name="white">#FFF4F4F4</color>
+    <dimen name="bottom_nav_icon_size">60dp</dimen>
     <string name="app_name">Quimera_Android</string>
     <style name="Base.Theme.Quimera_Android" parent="Theme.Material3.DayNight.NoActionBar">
         
