@@ -1,0 +1,79 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Video de fondo  -->
+    <VideoView
+        android:id="@+id/videoinicio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" /> <!-- Esto es clave -->
+
+    <!-- Imagen animada encima del video -->
+    <ImageView
+        android:id="@+id/animatedImage"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logoquimera"
+        android:translationY="500dp"
+        android:alpha="0"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="30dp" />
+
+    <TextView
+        android:id="@+id/animatedText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="El destino definitivo para todos los lanzamientos de zapatillas, historias únicas y acceso a productos y eventos exclusivos."
+        android:textSize="11sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="start"
+        android:alpha="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/animatedImage"
+        android:layout_marginTop="38dp"
+        android:layout_marginStart="30dp"/>
+
+    <!-- Botón entra -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/leftButton"
+        android:layout_width="185dp"
+        android:layout_height="50dp"
+        android:text="Entra"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppinsbold"
+        android:alpha="0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/animatedText"
+    android:layout_marginTop="30dp"
+    android:layout_marginStart="30dp"
+        android:textAllCaps="false"
+        android:background="@drawable/buttonwhite"
+        android:textColor="@color/black"/>
+
+    <!-- Botón registrate -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rightButton"
+        android:layout_width="185dp"
+        android:layout_height="50dp"
+        android:text="Regístrate"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppinsbold"
+        android:alpha="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/animatedText"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:textAllCaps="false"
+        android:background="@drawable/buttontransparentwhite"
+        android:textColor="@android:color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

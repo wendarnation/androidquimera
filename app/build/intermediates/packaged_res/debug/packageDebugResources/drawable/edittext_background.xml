@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Estado cuando el EditText está enfocado -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/> <!-- Fondo transparente -->
+            <stroke android:width="2dp" android:color="@color/black"/> <!-- Borde negro al enfocar -->
+            <corners android:radius="8dp"/> <!-- Bordes redondeados -->
+        </shape>
+    </item>
+
+    <!-- Estado normal (sin foco) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/>
+            <stroke android:width="2dp" android:color="@color/gray"/> <!-- Borde gris por defecto -->
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+</selector>
