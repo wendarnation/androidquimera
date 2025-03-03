@@ -1,7 +1,6 @@
 package com.ejemplo.android.quimera_android;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -40,6 +39,15 @@ public class LoginActivity extends AppCompatActivity {
         errorMessage = findViewById(R.id.errorMessage);
         btnEntrar = findViewById(R.id.btnEntrar);
 
+        // Manejar el clic en el campo de "usuario"
+        inputUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Asegurarse de que el campo de "usuario" reciba el enfoque
+                inputUsuario.requestFocus();
+            }
+        });
+
         // Manejar el clic en el botón "Entra"
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,10 +68,10 @@ public class LoginActivity extends AppCompatActivity {
             errorMessage.setVisibility(View.GONE);
 
             // Guardar el nombre de usuario en SharedPreferences
-            SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("USERNAME", usuario);
-            editor.apply();
+            getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                    .edit()
+                    .putString("USERNAME", usuario)
+                    .apply();
 
             // Pasar el usuario a HomeActivity
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);

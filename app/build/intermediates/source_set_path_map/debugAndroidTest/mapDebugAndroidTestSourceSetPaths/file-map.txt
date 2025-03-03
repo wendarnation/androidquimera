@@ -1,5 +1,5 @@
-com.ejemplo.android.quimera_android.test.app-core-1.6.1-0 C:\Users\ccort\.gradle\caches\transforms-4\afd5a030116de1c00cfaee696c9936d7\transformed\core-1.6.1\res
-com.ejemplo.android.quimera_android.test.app-androidTest-1 C:\Users\ccort\Documents\2daw\hlc\androidquimera\app\build\generated\res\resValues\androidTest\debug
-com.ejemplo.android.quimera_android.test.app-mergeDebugAndroidTestResources-2 C:\Users\ccort\Documents\2daw\hlc\androidquimera\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.ejemplo.android.quimera_android.test.app-mergeDebugAndroidTestResources-3 C:\Users\ccort\Documents\2daw\hlc\androidquimera\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.ejemplo.android.quimera_android.test.app-debugAndroidTest-4 C:\Users\ccort\Documents\2daw\hlc\androidquimera\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.ejemplo.android.quimera_android.test.app-core-1.6.1-0 C:\Users\usuario\.gradle\caches\transforms-4\afd5a030116de1c00cfaee696c9936d7\transformed\core-1.6.1\res
+com.ejemplo.android.quimera_android.test.app-androidTest-1 C:\Users\usuario\Desktop\androidquimera\app\build\generated\res\resValues\androidTest\debug
+com.ejemplo.android.quimera_android.test.app-mergeDebugAndroidTestResources-2 C:\Users\usuario\Desktop\androidquimera\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.ejemplo.android.quimera_android.test.app-mergeDebugAndroidTestResources-3 C:\Users\usuario\Desktop\androidquimera\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.ejemplo.android.quimera_android.test.app-debugAndroidTest-4 C:\Users\usuario\Desktop\androidquimera\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

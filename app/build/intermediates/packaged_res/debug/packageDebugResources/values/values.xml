@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF191717</color>
     <color name="gray">#FFB5B4B4</color>
+    <color name="green">#329E6C</color>
     <color name="lightgray">#EDEDED</color>
     <color name="white">#FFF4F4F4</color>
     <dimen name="bottom_nav_icon_size">60dp</dimen>

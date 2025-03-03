@@ -4,7 +4,7 @@
             "outputFile": "com.ejemplo.android.quimera_android.app-mergeDebugResources-31:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ccort\\.gradle\\caches\\transforms-4\\1456f14fdc836e70ec9cc668f53db485\\transformed\\material-1.12.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "source": "C:\\Users\\usuario\\.gradle\\caches\\transforms-4\\1456f14fdc836e70ec9cc668f53db485\\transformed\\material-1.12.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
