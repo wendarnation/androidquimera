@@ -4,7 +4,7 @@
             "outputFile": "com.ejemplo.android.quimera_android.app-mergeDebugResources-31:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\usuario\\.gradle\\caches\\transforms-4\\d4c2239c86efbbfd610f276b047f7466\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\ccort\\.gradle\\caches\\transforms-4\\d4c2239c86efbbfd610f276b047f7466\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

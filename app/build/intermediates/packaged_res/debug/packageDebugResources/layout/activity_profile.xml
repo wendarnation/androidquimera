@@ -165,29 +165,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Texto 'Suscripción' -->
-        <TextView
-            android:id="@+id/txtSubscription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Suscripción"
-            android:textSize="16sp"
-            android:fontFamily="@font/poppinsmedium"
-            android:textColor="@color/gray"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="12dp"/>
-
-        <!-- Contenedor de botones Free y Paid -->
+        <!-- Contenedor con el texto y los botones -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:orientation="vertical"
+            android:gravity="center_vertical">
 
-            <!-- Contenedor del botón Free con el tick -->
-            <FrameLayout
+            <!-- Texto 'Suscripción' alineado a la izquierda -->
+            <TextView
+                android:id="@+id/txtSubscription"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="Suscripción"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:textColor="@color/gray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="12dp"/>
+
+            <!-- Botones Free y Paid juntos -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <!-- Botón Free -->
                 <androidx.appcompat.widget.AppCompatButton
@@ -202,29 +203,31 @@
                     android:textColor="@android:color/white"
                     android:layout_marginEnd="12dp"/>
 
-                <!-- Tick en la esquina superior derecha -->
-                <ImageView
-                    android:id="@+id/tickIcon"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_tick"
-                    android:layout_gravity="top|end"
-                    android:layout_marginTop="-5dp"
-                    android:layout_marginEnd="-5dp"/>
-            </FrameLayout>
-
-            <!-- Botón Paid -->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnPaid"
-                android:layout_width="115dp"
-                android:layout_height="50dp"
-                android:text="Paid"
-                android:textSize="18sp"
-                android:fontFamily="@font/poppinsmedium"
-                android:textAllCaps="false"
-                android:background="@drawable/buttontransparentblack"
-                android:textColor="@color/gray"/>
+                <!-- Botón Paid -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPaid"
+                    android:layout_width="115dp"
+                    android:layout_height="50dp"
+                    android:text="Paid"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textAllCaps="false"
+                    android:background="@drawable/buttontransparentblack"
+                    android:textColor="@color/gray"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <!-- Navbar inferior -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@color/gray"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

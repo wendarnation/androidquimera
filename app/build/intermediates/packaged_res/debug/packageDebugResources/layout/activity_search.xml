@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".SearchActivity">
 
     <!-- Header fijo en la parte superior -->
@@ -14,25 +16,391 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Contenido principal con margen debajo del header -->
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginBottom="56dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Busca por marca, SKU..."
+        app:boxStrokeColor="@color/text_input_stroke"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:hintTextColor="@color/text_input_hint"
+        android:fontFamily="@font/poppinsbold"
+        app:startIconDrawable="@drawable/ic_search_svg"
+        app:startIconTint="@color/black"
+        app:endIconDrawable="@drawable/ic_camera"
+        app:endIconTint="@color/black"
+        app:endIconMode="custom"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/header"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="18sp"
+            android:inputType="text"
+            android:imeOptions="actionSearch"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Aquí va el contenido dinámico de la pantalla -->
 
+    <!-- Contenedor para los recuadros "Ordenar por" y "Filtrar por" -->
+    <LinearLayout
+        android:id="@+id/filterContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/searchInputLayout"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Recuadro "Ordenar por" -->
+        <LinearLayout
+            android:id="@+id/sortBox"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/lightgray"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="12dp">
+
+            <TextView
+                android:id="@+id/txtSortBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordenar por"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageView
+                android:id="@+id/iconSort"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_down"
+                app:tint="@color/gray"/>
         </LinearLayout>
-    </ScrollView>
+
+        <!-- Recuadro "Filtrar por" -->
+        <LinearLayout
+            android:id="@+id/filterBox"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/lightgray"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtFilterBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filtrar por"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageView
+                android:id="@+id/iconFilter"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_down"
+                app:tint="@color/gray"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Contenedor de imágenes -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/filterContainer"
+        android:layout_marginTop="10dp">
+
+        <!-- Imagen Jordan 5 (Izquierda) -->
+        <ImageView
+            android:id="@+id/imageJordanV"
+            android:layout_width="168dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jordanv"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Textos debajo de Jordan 5 (Izquierda) -->
+        <TextView
+            android:id="@+id/titleJordanV"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Jordan 5 Retro"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppinsbold"
+            app:layout_constraintTop_toBottomOf="@id/imageJordanV"
+            app:layout_constraintStart_toStartOf="@id/imageJordanV"/>
+
+        <TextView
+            android:id="@+id/subtitleJordanV"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:text="Black Metallic Reimagined"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsmedium"
+            app:layout_constraintTop_toBottomOf="@id/titleJordanV"
+            app:layout_constraintStart_toStartOf="@id/imageJordanV"/>
+
+        <TextView
+            android:id="@+id/lowestPriceLabel"
+            android:text="Precio más bajo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:fontFamily="@font/poppinsmedium"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/subtitleJordanV"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/imageJordanV"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/lowestPriceLabel"
+            app:layout_constraintStart_toStartOf="@id/imageJordanV">
+
+            <TextView
+                android:id="@+id/priceJordanV"
+                android:text="223 €"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green"
+                android:textSize="28sp"
+                android:fontFamily="@font/poppinsbold"/>
+        </LinearLayout>
+
+        <!-- Imagen Jordan I -->
+        <ImageView
+            android:id="@+id/imageJordanI"
+            android:layout_width="168dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jordani"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Textos debajo de Jordan 5 (Derecha - Clon) -->
+        <TextView
+            android:id="@+id/titleJordanI"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Jordan 1 Retro"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppinsbold"
+            app:layout_constraintTop_toBottomOf="@id/imageJordanI"
+            app:layout_constraintStart_toStartOf="@id/imageJordanI"/>
+
+        <TextView
+            android:id="@+id/subtitleJordanI"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:text="High Bred 1985 Original"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsmedium"
+            app:layout_constraintTop_toBottomOf="@id/titleJordanI"
+            app:layout_constraintStart_toStartOf="@id/imageJordanI"/>
+
+        <TextView
+            android:id="@+id/lowestPriceLabelJordanI"
+            android:text="Precio más bajo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:fontFamily="@font/poppinsmedium"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/subtitleJordanI"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/imageJordanI"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/lowestPriceLabelJordanI"
+            app:layout_constraintStart_toStartOf="@id/imageJordanI">
+
+            <TextView
+                android:id="@+id/priceJordanI"
+                android:text="279 €"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green"
+                android:textSize="28sp"
+                android:fontFamily="@font/poppinsbold"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Contenedor de imágenes -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/container1"
+        android:layout_marginTop="10dp">
+
+        <!-- Imagen New Balance (Izquierda) -->
+        <ImageView
+            android:id="@+id/imageNewBalance"
+            android:layout_width="168dp"
+            android:layout_height="130dp"
+            android:src="@drawable/newbalance"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Textos debajo de Jordan 5 (Izquierda) -->
+        <TextView
+            android:id="@+id/titleNewBalance"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="New Balance 9060"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppinsbold"
+            app:layout_constraintTop_toBottomOf="@id/imageNewBalance"
+            app:layout_constraintStart_toStartOf="@id/imageNewBalance"/>
+
+        <TextView
+            android:id="@+id/subtitleNewBalance"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:text="Pearl Grey Linen"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsmedium"
+            app:layout_constraintTop_toBottomOf="@id/titleNewBalance"
+            app:layout_constraintStart_toStartOf="@id/imageNewBalance"/>
+
+        <TextView
+            android:id="@+id/lowestNewBalance"
+            android:text="Precio más bajo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:fontFamily="@font/poppinsmedium"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/subtitleNewBalance"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/imageNewBalance"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/lowestNewBalance"
+            app:layout_constraintStart_toStartOf="@id/imageNewBalance">
+
+            <TextView
+                android:id="@+id/priceNewBalance"
+                android:text="124 €"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:textSize="28sp"
+                android:fontFamily="@font/poppinsbold"/>
+        </LinearLayout>
+
+        <!-- Imagen Adidas -->
+        <ImageView
+            android:id="@+id/imageadidas"
+            android:layout_width="168dp"
+            android:layout_height="130dp"
+            android:src="@drawable/adidas"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Textos debajo de Jordan 5 (Derecha - Clon) -->
+        <TextView
+            android:id="@+id/titleadidas"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="adidas Campus 00s"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppinsbold"
+            app:layout_constraintTop_toBottomOf="@id/imageadidas"
+            app:layout_constraintStart_toStartOf="@id/imageadidas"/>
+
+        <TextView
+            android:id="@+id/subtitleadidas"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:text="Core Black"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsmedium"
+            app:layout_constraintTop_toBottomOf="@id/titleadidas"
+            app:layout_constraintStart_toStartOf="@id/imageadidas"/>
+
+        <TextView
+            android:id="@+id/lowestadidas"
+            android:text="Precio más bajo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:fontFamily="@font/poppinsmedium"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/subtitleadidas"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/imageadidas"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/lowestadidas"
+            app:layout_constraintStart_toStartOf="@id/imageadidas">
+
+            <TextView
+                android:id="@+id/priceadidas"
+                android:text="61 €"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:textSize="28sp"
+                android:fontFamily="@font/poppinsbold"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <!-- Navbar inferior -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

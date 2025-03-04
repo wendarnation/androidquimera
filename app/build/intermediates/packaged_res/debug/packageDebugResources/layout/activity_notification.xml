@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".NotificationActivity">
 
     <!-- Header fijo en la parte superior -->
@@ -14,37 +15,175 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Contenido principal con margen debajo del header -->
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="56dp"
-    android:layout_marginBottom="56dp"
-    app:layout_constraintTop_toBottomOf="@id/header"
-    app:layout_constraintBottom_toTopOf="@id/bottomNavigationView">
+    <!-- Título -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="¿Te gustaría estar al tanto de todas las novedades?"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Subtítulo -->
+    <TextView
+        android:id="@+id/subtitleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Suscríbete para tener acceso a la newsletter, notificaciones y sorteos exclusivos"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppinsmedium"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
+        android:id="@+id/filterContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Aquí va el contenido dinámico de la pantalla -->
+        <!-- Recuadro "Ordenar por" -->
+        <LinearLayout
+            android:id="@+id/sortBox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/lightgray"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtSortBy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="¿Cómo me suscribo?"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppinsmedium"/>
+
+            <ImageView
+                android:id="@+id/iconSort"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_down"
+                app:tint="@color/gray"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+
+        <!-- Recuadro "Filtrar por" -->
+        <LinearLayout
+            android:id="@+id/filterBox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/lightgray"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtFilterBy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="¿Qué ventajas tiene la suscripción?"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppinsmedium"/>
+
+            <ImageView
+                android:id="@+id/iconFilter"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_down"
+                app:tint="@color/gray"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+
+        <!-- Recuadro "Precio" -->
+        <LinearLayout
+            android:id="@+id/filterprice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/lightgray"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtprice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="¿Qué precio tiene?"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppinsmedium"/>
+
+            <ImageView
+                android:id="@+id/iconprice"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_down"
+                app:tint="@color/gray"
+                android:layout_gravity="end"/>
+        </LinearLayout>
 
     </LinearLayout>
-</ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnsuscripcion"
+        android:layout_width="180dp"
+        android:layout_height="65dp"
+        android:text="Suscríbete"
+        android:textSize="24sp"
+        android:fontFamily="@font/poppinsbold"
+        android:textAllCaps="false"
+        android:background="@drawable/buttonblack"
+        android:textColor="@color/white"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toBottomOf="@id/filterContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <!-- Navbar inferior -->
-<com.google.android.material.bottomnavigation.BottomNavigationView
-android:id="@+id/bottomNavigationView"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:background="@color/white"
-app:itemIconTint="@color/gray"
-app:itemTextColor="@color/black"
-app:labelVisibilityMode="unlabeled"
-app:menu="@menu/bottom_nav_menu"
-android:layout_gravity="bottom"
-app:layout_constraintBottom_toBottomOf="parent"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@color/gray"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
